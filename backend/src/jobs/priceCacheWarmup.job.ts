@@ -179,9 +179,9 @@ class PriceCacheWarmupService {
           true // bypassCache to force refresh
         );
 
-        if (price && price.price > 0) {
+        if (price && price.vwap > 0) {
           logger.debug(
-            { asset: assetCode, price: price.price },
+            { asset: assetCode, price: price.vwap },
             "Price cached successfully"
           );
           return { success: true, stale: false };
