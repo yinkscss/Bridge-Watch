@@ -11,6 +11,7 @@ import { processExternalDependencyMonitor } from "./externalDependencyMonitor.jo
 import { logger } from "../utils/logger.js";
 import { initSupplyVerificationJob } from "../jobs/supplyVerification.job.js";
 import { runAuditRetentionJob } from "../jobs/auditRetention.job.js";
+import { runPriceCacheWarmup } from "../jobs/priceCacheWarmup.job.js";
 
 export async function initJobSystem() {
   const jobQueue = JobQueue.getInstance();
