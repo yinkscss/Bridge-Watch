@@ -348,7 +348,7 @@ export class AlertService {
         triggered.push(event);
 
         // Trigger circuit breaker if configured
-        await this.triggerCircuitBreaker(event).catch((err) =>
+        await this.triggerCircuitBreaker(event, rule).catch((err) =>
           logger.error({ ruleId: rule.id, err }, "Circuit breaker trigger failed")
         );
 
